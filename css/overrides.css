@@ -13,3 +13,7 @@
   min-height: 100% !important;
   top: auto !important;
 }
+
+video {
+    outline: none;
+}
