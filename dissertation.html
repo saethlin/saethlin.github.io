@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Dissertaton</title>
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/overrides.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/monokai.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section style="padding: 2vh 0; height: 100vh;">
+    <h1 style="font-size: 10vmin;">SpaceBlobs</h1>
+    <p style="font-size: 5vmin;"><br><b>Ben Kimock</b><br>
+    Desika Narayanan, Aaron Smith, the FIRE collaboration</p>
+    <p style="font-size: 4vmin;"><br>saethlin.github.io/dissertation</p>
+</section>
+
+<section style="padding: 2vh 0; height: 100vh;">
+    <h1 style="font-size: 10vmin;">Lyman-alpha Blobs in cosmological simulations</h1>
+    <p style="font-size: 5vmin;"><br><b>Ben Kimock</b><br>
+    Desika Narayanan, Aaron Smith, the FIRE collaboration</p>
+    <p style="font-size: 4vmin;"><br>saethlin.github.io/dissertation</p>
+</section>
+
+<section style="padding: 2vh 0; height: 100vh;">
+    <h1 style="font-size: 10vmin;">Lyman-alpha emission and escape from massive galaxies at high redshift in cosmological simulations</h1>
+    <p style="font-size: 5vmin;"><br><b>Ben Kimock</b><br>
+    Desika Narayanan, Aaron Smith, the FIRE collaboration</p>
+    <p style="font-size: 4vmin;"><br>saethlin.github.io/dissertation</p>
+</section>
+
+<section>
+    <h2>What is Lyman-alpha</h2>
+    <div class="row" style="padding-left: 2vmin; padding-right: 2vmin">
+        <div class="column" align="left">
+            <p>
+            121.6 nm<br><br>
+            "scattering"<br>
+            </p>
+        </div>
+        <div class="column"> 
+            <img class="plain" src="figures/neufeld.png" align="middle" style="height: 100%">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>What is a Lyman-alpha Blob?</h2>
+    <div class="row">
+        <div class="column" align="left">
+            <p>
+            Massive: (~100 kpc "in extent")<br><br>
+            Luminous: (~10<sup>43</sup> erg/s)<br><br>
+            </p>
+        </div>
+        <div class="column"> 
+            <img class="plain" src="figures/steidel.png" align="top" style="height: 82vh">
+        </div>
+    </div>
+    <div style="position: absolute; bottom: 7.5vh; right: 45vw; font-size: 3vh;">Steidel et al. 2000</div>
+</section>
+
+<section>
+    <h2>Why does anyone care?</h2>
+    <div class="row" style="padding-left: 2vmin; padding-right: 2vmin">
+        <div class="column" align="left">
+            <p>
+            Reionization<br>
+            Understanding the most distant observations<br>
+            </p>
+        </div>
+        <div class="column" align="left"> 
+            <p>
+            Computationally intensive project<br>
+            Air of mystery<br>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>What Could Power Blobs?</h2>
+    <div style="text-align: center; padding: 3vh">
+    <object data="figures/mechanisms.png" type="image/png" style="width: 90vw;"></object>
+    <div style="position: absolute; bottom: 2vh; left: 3vw; font-size: 3vh;">sketch from Desika Narayanan</div>
+    </div>
+</section>
+
+<section>
+    <h2>Model Inputs</h2>
+        <img class="plain" src="figures/total_map.svg" align="left" style="width: 47vw; height: 82vh">
+        <img class="plain" src="figures/stars_map.svg", align="right", style="width: 47vw; height: 82vh">
+    </table>
+    <br>
+</section>
+
+<section>
+    <h2>Ionization State</h2>
+        <img class="plain" src="figures/neutral_map.svg" align="left" style="width: 47vw; height: 82vh">
+        <img class="plain" src="figures/ionized_map.svg", align="right", style="width: 47vw; height: 82vh">
+    </table>
+    <br>
+</section>
+
+<section>
+    <h2>Lyα Emissivity</h2>
+        <img class="plain" src="figures/col_map.svg" align="left" style="width: 47vw; height: 82vh">
+        <img class="plain" src="figures/rec_map.svg", align="right", style="width: 47vw; height: 82vh">
+    </table>
+    <br>
+</section>
+
+<section>
+    <h2>So... Is it a Blob?</h2>
+        <img class="plain" src="figures/lya_map.svg" align="left" style="width: 47vw; height: 82vh">
+        <img class="plain" src="figures/muse_map.svg" align="right" style="width: 47vw; height: 82vh">
+    </table>
+    <br>
+</section>
+
+<section>
+    <h2>So... Is it a Blob?</h2>
+        <img class="plain" src="figures/matsuda2011blobs.png" align="left" style="height: 82vh;">
+        <div style="position: absolute; bottom: 4vh; left: 35vw; font-size: 3vh;">Matsuda et al. 2011</div>
+        <img class="plain" src="figures/muse_map.svg" align="right" style="width: 47vw; height: 82vh">
+    </table>
+    <br>
+</section>
+
+<section>
+    <video controls loop style="height: 97vh;">
+        <source src="figures/h113_143.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section>
+    <section>
+        <h2>What is the source of Lyα?</h2>
+        <div>
+        <img class="plain" src="figures/recombination_collision.svg" align="left" style="height: 80vh;">
+        <p align="left" style="padding-left: 55vw;">
+        <br><br>
+        Collisional excitations<br>
+        ...not necessarily cooling streams<br>
+        </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>But what about the AGN?</h2>
+    </section>
+
+    <section>
+        <h2>Ionization State (without/with AGN)</h2>
+            <img class="plain" src="figures/ionized_map.svg" align="left" style="width: 47vw; height: 82vh">
+            <img class="plain" src="figures/agn_ionized_map.svg", align="right", style="width: 47vw; height: 82vh">
+        </table>
+        <br>
+    </section>
+</section>
+
+<section>
+    <h2>What is the source of Lyα (with AGN)?</h2>
+    <div>
+    <img class="plain" src="figures/agn_recombination_collision.svg" align="left" style="height: 80vh;">
+    <p align="left" style="padding-left: 55vw;">
+    <br><br>
+    Escape fraction depends on source<br><br>
+    Elevated ionization and escape fraction<br><br>
+    <i>Suppression</i> of collisional excitation<br><br>
+    </p>
+    </div>
+</section>
+
+<section>
+    <video controls loop style="height: 97vh;">
+        <source src="figures/A8_172.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section>
+    <video controls loop style="height: 97vh;">
+        <source src="figures/A8_148.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section>
+    <section>
+        <h2>RT Matters!</h2>
+        <img class="plain" src="figures/agn_comparison.svg" align="left" style="height: 80vh;">
+        <p align="left" style="padding-left: 55vw;">
+        <br>
+        Escape fraction is not close to unity<br><br>
+        Strong line-of-sight dependence<br><br>
+        Spectrum is not easy to interpret<br><br>
+        </p>
+    </section>
+
+    <section>
+        <img class="plain" src="figures/scattering_diagram.png" style="display: inline; max-height: 90vh; max-width: 90vw; height: auto; width: auto;">
+    </section>
+</section>
+
+<section>
+    <h2>Conclusions</h2>
+    <br>
+    <p align="left">
+    Our model (zooms + ionizing MCRT + Lyα MCRT) reproduces observations of LABs<br><br>
+    LABs may be powered by emission from collisional excitations, but not necessarily cooling streams<br><br>
+    AGN have a dramatic impact on what physical mechanism powers LABs<br><br>
+    The Lyα escape fraction from LABs is highly orientation-dependent, particularly in the presence of AGN<br><br>
+    </p>
+</section>
+
+<section>
+    <video controls loop style="height: 97vh;">
+        <source src="figures/A8_172_moment1.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section>
+    <video controls loop style="height: 97vh;">
+        <source src="figures/A8_172_moment2.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section>
+    <video controls loop style="height: 97vh;">
+        <source src="figures/h206_172.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section>
+    <h2>RT Matters!</h2>
+    <img class="plain" src="figures/A8_agn_comparison.svg" align="left" style="height: 80vh;">
+    <p align="left" style="padding-left: 55vw;">
+    <br>
+    Escape fraction is not close to unity<br><br>
+    Strong line-of-sight dependence<br><br>
+    Spectrum is not easy to interpret<br><br>
+    </p>
+</section>
+
+</div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+// More info about config & dependencies:
+// - https://github.com/hakimel/reveal.js#configuration
+// - https://github.com/hakimel/reveal.js#dependencies
+Reveal.initialize({
+    controls: true,
+    controlsTutorial: false,
+    history: true,
+    transition: "none",
+    pdfMaxPagesPerSlide: 1,
+    width: "100%",
+    height: "100%",
+    margin: 0,
+    minScale: 1,
+    maxScale: 1,
+    transitionSpeed: 'fast',
+    dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true }
+    ]
+});
+</script>
+</body>
+</html>
