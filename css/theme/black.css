@@ -21,18 +21,6 @@ body {
   background-color: #000000;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 4.5vmin;
