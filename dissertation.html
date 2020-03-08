@@ -6,11 +6,11 @@
 
         <title>Dissertaton</title>
 
+        <link rel="stylesheet" href="bulma/css/bulma.css">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css">
         <link rel="stylesheet" href="css/overrides.css">
-        <link rel="stylesheet" href="bulma/css/bulma.css">
 
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="lib/css/monokai.css">
@@ -28,22 +28,22 @@
 <div class="reveal">
 <div class="slides">
 
-<section style="padding: 2vh 0; height: 100vh;">
-    <h1 style="font-size: 10vmin;">SpaceBlobs</h1>
+<section>
+    <h1>SpaceBlobs</h1>
     <p style="font-size: 5vmin;"><br><b>Ben Kimock</b><br>
     Desika Narayanan, Aaron Smith, the FIRE collaboration</p>
     <p style="font-size: 4vmin;"><br>saethlin.github.io/dissertation</p>
 </section>
 
-<section style="padding: 2vh 0; height: 100vh;">
-    <h1 style="font-size: 10vmin;">Lyman-alpha Blobs in cosmological simulations</h1>
+<section>
+    <h1>Lyman-alpha Blobs in cosmological simulations</h1>
     <p style="font-size: 5vmin;"><br><b>Ben Kimock</b><br>
     Desika Narayanan, Aaron Smith, the FIRE collaboration</p>
     <p style="font-size: 4vmin;"><br>saethlin.github.io/dissertation</p>
 </section>
 
-<section style="padding: 2vh 0; height: 100vh;">
-    <h1 style="font-size: 10vmin;">Lyman-alpha emission and escape from massive galaxies at high redshift in cosmological simulations</h1>
+<section>
+    <h1>Lyman-alpha emission and escape from massive galaxies at high redshift in cosmological simulations</h1>
     <p style="font-size: 5vmin;"><br><b>Ben Kimock</b><br>
     Desika Narayanan, Aaron Smith, the FIRE collaboration</p>
     <p style="font-size: 4vmin;"><br>saethlin.github.io/dissertation</p>
@@ -65,16 +65,16 @@
     </div>
 </section>
 
-<section style="border: 1px solid blue; height: 100%; padding: 5px;">
+<section>
     <h2>What is a Lyman-alpha Blob?</h2>
-    <div class="columns" style="border: 1px dashed green;">
-        <div class="column" align="left" style="border: 0px solid yellow;">
+    <div class="columns">
+        <div class="column" align="left">
             <p>
             Massive: (~100 kpc "in extent")<br><br>
             Luminous: (~10<sup>43</sup> erg/s)<br><br>
             </p>
         </div>
-        <div class="column" style="border: 1px solid red; height: 100%">
+        <div class="column">
             <img class="plain" src="figures/steidel.png" style="object-fit: contain;">
             <p align="left">Steidel et al. 2000</p>
         </div>
@@ -82,70 +82,111 @@
 </section>
 
 <section>
-    <h2>Why does anyone care?</h2>
-    <div class="row" style="padding-left: 2vmin; padding-right: 2vmin">
-        <div class="column" align="left">
-            <p>
-            Reionization<br>
-            Understanding the most distant observations<br>
-            </p>
-        </div>
-        <div class="column" align="left"> 
-            <p>
-            Computationally intensive project<br>
-            Air of mystery<br>
-            </p>
-        </div>
-    </div>
+    <h2>Why does anyone care? Reionization</h2>
+    <img class="plain" src="figures/reionization_timeline.jpg" style="max-height: 50%">
+    <img class="plain" src="figures/oligarchs.png" style="max-height: 50%">
+</section>
+
+<section>
+    <h2>Why does anyone care? High-z Observations</h2>
+    <img class="plain" src="figures/krittapas_top.png" style="max-height: 50%">
+    <img class="plain" src="figures/krittapas_fig.png" style="max-height: 50%">
 </section>
 
 <section>
     <h2>What Could Power Blobs?</h2>
-    <div style="text-align: center; padding: 3vh">
-    <object data="figures/mechanisms.png" type="image/png" style="width: 90vw;"></object>
-    <div style="position: absolute; bottom: 2vh; left: 3vw; font-size: 3vh;">sketch from Desika Narayanan</div>
+    <img src="figures/mechanisms.png" style="width: 90%;">
+    <p style="font-size: 3vmin;">sketch by Desika Narayanan</p>
+</section>
+
+<section>
+    <h2>So how do we simulate all those?</h2>
+    <img class="plain" src="figures/here_to_help.png" width=80%>
+    <p style="font-size: 3vmin;">https://xkcd.com/1831/</p>
+</section>
+
+<section>
+    <h2>How to MCRT</h2>
+    <br>
+    <ol style="line-height: 200%;">
+        <li>Emission</li>
+        <li>Propagation</li>
+        <li>Scattering</li>
+        <li>???</li>
+        <li>Profit</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Lyman-alpha Emission</h2>
+    <div class="grid-container" style="grid-template-columns: 1fr;">
+        <div class="grid-item">
+            <img class="plain" src="figures/rec_eq.png" style="max-height: 50%; display: inline;">
+        </div>
+        <div class="grid-item">
+            <img class="plain" src="figures/col_eq.png" style="max-height: 50%; display: inline;">
+        </div>
     </div>
 </section>
 
 <section>
     <h2>Model Inputs</h2>
-        <img class="plain" src="figures/total_map.svg" align="left" style="width: 47vw; height: 82vh">
-        <img class="plain" src="figures/stars_map.svg", align="right", style="width: 47vw; height: 82vh">
-    </table>
-    <br>
+    <div class="columns">
+        <div class="column">
+            <img class="plain" src="figures/total_map.svg">
+        </div>
+        <div class="column">
+            <img class="plain" src="figures/stars_map.svg">
+        </div>
+    </div>
 </section>
 
 <section>
     <h2>Ionization State</h2>
-        <img class="plain" src="figures/neutral_map.svg" align="left" style="width: 47vw; height: 82vh">
-        <img class="plain" src="figures/ionized_map.svg", align="right", style="width: 47vw; height: 82vh">
-    </table>
-    <br>
+    <div class="columns">
+        <div class="column">
+            <img class="plain" src="figures/neutral_map.svg">
+        </div>
+        <div class="column">
+            <img class="plain" src="figures/ionized_map.svg">
+        </div>
+    </div>
 </section>
 
 <section>
     <h2>Lyα Emissivity</h2>
-        <img class="plain" src="figures/col_map.svg" align="left" style="width: 47vw; height: 82vh">
-        <img class="plain" src="figures/rec_map.svg", align="right", style="width: 47vw; height: 82vh">
-    </table>
-    <br>
+    <div class="columns">
+        <div class="column">
+            <img class="plain" src="figures/col_map.svg">
+        </div>
+        <div class="column">
+            <img class="plain" src="figures/rec_map.svg">
+        </div>
+    </div>
 </section>
 
 <section>
     <h2>So... Is it a Blob?</h2>
-        <img class="plain" src="figures/lya_map.svg" align="left" style="width: 47vw; height: 82vh">
-        <img class="plain" src="figures/muse_map.svg" align="right" style="width: 47vw; height: 82vh">
-    </table>
-    <br>
+    <div class="columns">
+        <div class="column">
+            <img class="plain" src="figures/lya_map.svg">
+        </div>
+        <div class="column">
+            <img class="plain" src="figures/muse_map.svg">
+        </div>
+    </div>
 </section>
 
 <section>
     <h2>So... Is it a Blob?</h2>
-        <img class="plain" src="figures/matsuda2011blobs.png" align="left" style="height: 82vh;">
-        <div style="position: absolute; bottom: 4vh; left: 35vw; font-size: 3vh;">Matsuda et al. 2011</div>
-        <img class="plain" src="figures/muse_map.svg" align="right" style="width: 47vw; height: 82vh">
-    </table>
-    <br>
+    <div class="columns">
+        <div class="column">
+            <img class="plain" src="figures/matsuda2011blobs.png">
+        </div>
+        <div class="column">
+            <img class="plain" src="figures/muse_map.svg">
+            <div style="position: absolute; bottom: 4vh; left: 35vw; font-size: 3vh;">Matsuda et al. 2011</div>
+        </div>
 </section>
 
 <section>
@@ -173,10 +214,8 @@
 
     <section>
         <h2>Ionization State (without/with AGN)</h2>
-            <img class="plain" src="figures/ionized_map.svg" align="left" style="width: 47vw; height: 82vh">
-            <img class="plain" src="figures/agn_ionized_map.svg", align="right", style="width: 47vw; height: 82vh">
-        </table>
-        <br>
+        <img class="plain" src="figures/ionized_map.svg" align="left" style="width: 47vw; height: 82vh">
+        <img class="plain" src="figures/agn_ionized_map.svg", align="right", style="width: 47vw; height: 82vh">
     </section>
 </section>
 
