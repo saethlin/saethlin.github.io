@@ -6,7 +6,6 @@
 
         <title>Dissertaton</title>
 
-        <link rel="stylesheet" href="bulma/css/bulma.css">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css">
@@ -49,35 +48,31 @@
     <p style="font-size: 4vmin;"><br>saethlin.github.io/dissertation</p>
 </section>
 
-<section>
-    <h2>What is Lyman-alpha?</h2>
-    <div class="columns" style="padding-left: 2vmin; padding-right: 2vmin; height: 100%">
-        <div class="column" align="left">
-            <p>
-            121.6 nm<br><br>
-            Resonant Scattering
-            </p>
-        </div>
-        <div class="column" style="height: 40%">
-            <img class="plain" src="figures/lyman_series.png">
-            <img class="plain" src="figures/neufeld.png">
-        </div>
+<section class="grid-slide">
+    <div class="grid-element">
+        <h2>What is Lyman-alpha?</h2>
+    </div>
+    <div class="grid-element">
+        <img src="figures/lyman_series.png">
+    </div>
+    <div class="grid-element">
+        <img src="figures/neufeld.png">
     </div>
 </section>
 
-<section>
-    <h2>What is a Lyman-alpha Blob?</h2>
-    <div class="columns">
-        <div class="column" align="left">
-            <p>
-            Massive: (~100 kpc "in extent")<br><br>
-            Luminous: (~10<sup>43</sup> erg/s)<br><br>
-            </p>
-        </div>
-        <div class="column">
-            <img class="plain" src="figures/steidel.png" style="object-fit: contain;">
-            <p align="left">Steidel et al. 2000</p>
-        </div>
+<section class="hgrid-slide">
+    <div class="slide-title">
+        <h2>What is a Lyman-alpha Blob?</h2>
+    </div>
+    <div class="grid-element">
+        <p align=left>
+        Massive: (~100 kpc "in extent")<br><br>
+        Luminous: (~10<sup>43</sup> erg/s)<br><br>
+        </p>
+    </div>
+    <div class="grid-element">
+        <img src="figures/steidel.png">
+        <p style="position: absolute; bottom: 0%;">Steidel et al. 2000</p>
     </div>
 </section>
 
@@ -87,10 +82,10 @@
             <h2>Why does anyone care? Reionization</h2>
         </div>
         <div class="grid-item">
-            <img class="plain" src="figures/reionization_timeline.jpg">
+            <img src="figures/reionization_timeline.jpg">
         </div>
         <div class="grid-item">
-            <img class="plain" src="figures/oligarchs.png">
+            <img src="figures/oligarchs.png">
         </div>
     </div>
 </section>
@@ -101,10 +96,10 @@
             <h2>Why does anyone care? High-z Observations</h2>
         </div>
         <div class="grid-item">
-            <img class="plain" src="figures/krittapas_top.png">
+            <img src="figures/krittapas_top.png">
         </div>
         <div class="grid-item">
-            <img class="plain" src="figures/krittapas_fig.png">
+            <img src="figures/krittapas_fig.png">
         </div>
     </div>
 </section>
@@ -117,7 +112,7 @@
 
 <section>
     <h2>So how do we simulate all those?</h2>
-    <img class="plain" src="figures/here_to_help.png" width=80%>
+    <img src="figures/here_to_help.png" width=80%>
     <p style="font-size: 3vmin;">https://xkcd.com/1831/</p>
 </section>
 
@@ -137,47 +132,47 @@
     <h2>Lyman-alpha Emission</h2>
     <div class="grid-container" style="grid-template-columns: 1fr;">
         <div class="grid-item">
-            <img class="plain" src="figures/rec_eq.png" style="max-height: 50%; display: inline;">
+            <img src="figures/rec_eq.png" style="max-height: 50%; display: inline;">
         </div>
         <div class="grid-item">
-            <img class="plain" src="figures/col_eq.png" style="max-height: 50%; display: inline;">
+            <img src="figures/col_eq.png" style="max-height: 50%; display: inline;">
         </div>
     </div>
 </section>
 
-<section>
-    <h2>Model Inputs</h2>
-    <div class="columns">
-        <div class="column">
-            <img class="plain" src="figures/total_map.svg">
-        </div>
-        <div class="column">
-            <img class="plain" src="figures/stars_map.svg">
-        </div>
+<section class="hgrid-slide">
+    <div class="slide-title">
+        <h2>Model Inputs</h2>
+    </div>
+    <div class="grid-item">
+        <img src="figures/total_map.svg">
+    </div>
+    <div class="grid-item">
+        <img src="figures/stars_map.svg">
     </div>
 </section>
 
-<section>
-    <h2>Ionization State</h2>
-    <div class="columns">
-        <div class="column">
-            <img class="plain" src="figures/neutral_map.svg">
-        </div>
-        <div class="column">
-            <img class="plain" src="figures/ionized_map.svg">
-        </div>
+<section class="hgrid-slide">
+    <div class="slide-title">
+        <h2>Ionization State</h2>
+    </div>
+    <div class="grid-item">
+        <img src="figures/neutral_map.svg">
+    </div>
+    <div class="grid-item">
+        <img src="figures/ionized_map.svg">
     </div>
 </section>
 
-<section>
+<section class="hgrid-slide">
+    <div class="slide-title">
     <h2>Lyα Emissivity</h2>
-    <div class="columns">
-        <div class="column">
-            <img class="plain" src="figures/col_map.svg">
-        </div>
-        <div class="column">
-            <img class="plain" src="figures/rec_map.svg">
-        </div>
+    </div>
+    <div class="grid-item">
+        <img src="figures/col_map.svg">
+    </div>
+    <div class="grid-item">
+        <img src="figures/rec_map.svg">
     </div>
 </section>
 
@@ -222,32 +217,39 @@
         <h2>Lyman-alpha Scattering</h2>
     </div>
     <div class="grid-item">
-        <img class="plain" src="figures/scattering.png">
+        <img src="figures/scattering.png">
+    </div>
+</section>
+
+<section class="hgrid-slide">
+    <div class="slide-title">
+        <h2>Do we have Blobs?</h2>
+    </div>
+    <div class="grid-item">
+        <img src="figures/lya_map.svg">
+    </div>
+    <div class="grid-item">
+        <img src="figures/muse_map.svg">
+    </div>
+</section>
+
+<section class="hgrid-slide">
+    <div class="slide-title">
+        <h2>Do we have Blobs?</h2>
+    </div>
+    <div class="grid-item">
+        <img src="figures/matsuda2011blobs.png">
+    </div>
+    <div class="grid-item">
+        <img src="figures/muse_map.svg">
+        <p style="position: absolute; bottom: 4vh; left: 35vw; font-size: 3vh;">Matsuda et al. 2011</p>
     </div>
 </section>
 
 <section>
-    <h2>Do we have Blobs?</h2>
-    <div class="columns">
-        <div class="column">
-            <img class="plain" src="figures/lya_map.svg">
-        </div>
-        <div class="column">
-            <img class="plain" src="figures/muse_map.svg">
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2>Do we have Blobs?</h2>
-    <div class="columns">
-        <div class="column">
-            <img class="plain" src="figures/matsuda2011blobs.png">
-        </div>
-        <div class="column">
-            <img class="plain" src="figures/muse_map.svg">
-            <div style="position: absolute; bottom: 4vh; left: 35vw; font-size: 3vh;">Matsuda et al. 2011</div>
-        </div>
+    <video controls loop style="height: 97vh;">
+        <source src="figures/h113_143.mp4" type="video/mp4">
+    </video>
 </section>
 
 <section>
@@ -264,25 +266,16 @@
     </div>
 </section>
 
-<section>
-    <video controls loop style="height: 97vh;">
-        <source src="figures/h113_143.mp4" type="video/mp4">
-    </video>
+<section class="grid-slide" style="grid-template-rows: 10% 85%;">
+    <div class="grid-element">
+        <h2>What is the source of Lyα?</h2>
+    </div>
+    <div class="grid-element">
+        <img src="figures/recombination_collision.svg" style="height: 100%; width: auto;">
+    </div>
 </section>
 
 <section>
-    <section>
-        <h2>What is the source of Lyα?</h2>
-        <div>
-        <img class="plain" src="figures/recombination_collision.svg" align="left" style="height: 80vh;">
-        <p align="left" style="padding-left: 55vw;">
-        <br><br>
-        Collisional excitations<br>
-        ...not necessarily cooling streams<br>
-        </p>
-        </div>
-    </section>
-
     <section>
         <h2>But what about the AGN?</h2>
     </section>
@@ -386,7 +379,8 @@
 // - https://github.com/hakimel/reveal.js#configuration
 // - https://github.com/hakimel/reveal.js#dependencies
 Reveal.initialize({
-    controls: true,
+    slideNumber: true,
+    controls: false,
     controlsTutorial: false,
     history: true,
     transition: "none",
