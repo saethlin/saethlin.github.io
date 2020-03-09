@@ -20,3 +20,27 @@
 video {
     outline: none;
 }
+
+.vfill {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.vfill img {
+   width: 100%;
+   height: auto;
+}
+
+.grid-slide {
+    height: 100% !important;
+    display: grid !important;
+    grid-template-rows: 10% 45% 45%;
+    grid-template-columns: 100% !important;
+    grid-row-gap: 1% !important;
+}
+
+.grid-slide .grid-item {
+    margin: 0px;
+}
