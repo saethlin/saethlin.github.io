@@ -19,18 +19,7 @@
 
 video {
     outline: none;
-}
-
-.vfill {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     height: 95%;
-}
-
-.vfill img {
-   width: 100%;
-   height: auto;
 }
 
 .grid-slide {
@@ -50,6 +39,12 @@ video {
 
 .grid-slide .grid-item {
     margin: 0px;
+}
+
+.hgrid-slide img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
 .hgrid-slide .grid-item {
