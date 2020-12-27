@@ -1,9 +1,48 @@
-# Benchmarking Introduction
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Title</title>
+    <style>
+        body {
+            font-family: Helvetica;
+            margin:40px auto;
+            max-width:650px;
+            line-height:1.6;
+            font-size:18px;
+            color:#090909;
+            padding:0 10px
+        }
+        h1,h2,h3{line-height:1.2}
+</style>
+</head>
+<body>
+<h2>Benchmarking is important</h2>
 
-oof
+<h2>The state of things</h2>
 
-# Bad Benchmarks
+<p>The performance of a microbenchmark can change for reasons totally irrelevant to the code that is executed by the benchmark; the most complete solution I'm aware of for this is stabilizer.
+Unfortunately, stabilizer is currently not an option because it ties so deeply into a compiler that the continuing investment is hard to justify.</p>
 
-# Better Benchmarks
+<p>cargo bench: In the past (and I'm not sure if it still does this), the tool reported the range of benchmark runtimes in a format that strongly suggested it was a measurement of uncertainty.
+This can lead to attempts at optimizing being discarded because they seem to provide no value, or regressions being accepted because they seem to have no effect.
+The core mistake is conflating the size of a distribution with how well we know some measure of its center.
+Eyeball statistics are simply no good for this sort of work; a good benchmark tool at a minimum needs to have access to before vs after runs, and be able to use Student's T-test to indicate what the odds are that the latest run is different from the previous.
+</p>
 
-# The Ideal Benchmark
+<p>hyperfine by default reports the standard deviation of measurements, which I've seen users interpret as a sort of uncertainty on the runtime measurement which is incorrect.
+When users gradually realize this, they tend to fixate way too much on the mean timing measurement that is reported and end up attributing spurious changes in that number to changes they made to the code.
+Additionally, hyperfine only measures wall time which makes it totally unsuitable for benchmarking programs that do I/O.
+If you're optimizing and optimizing and eventually your program's throughput becomes disk-bound (yay, victory!), hyperfine's output becomes useless or deceiving (you continue to decrease CPU utilization, but the hyperfine numbers don't change).
+Parallel code has similar problems.</p>
+
+<p>criterion actually does statistics, but understanding the performance of a benchmark requires more than it can do and thus it spuriously reports changes in performance more than 5% of the time which is what the p-value it uses would suggest.
+And criterion is especially vulnerable to the effects that stabilizer is intended to guard against because you're incentivized to put multiple microbenchmarks into one binary, and thus it's not uncommon to see edits to one benchmark alter the runtime of another.</p>
+
+<h2>Profile your benchmarks</h2>
+
+<h2>Some advice... maybe</h2>
+
+</body>
+</html>
