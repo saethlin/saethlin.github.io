@@ -1,26 +1,47 @@
-<h2>How tinyvec went from "it has a niche" to "it's often faster than smallvec"</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Title</title>
+    <style>
+        body {
+            font-family: Helvetica;
+            margin:40px auto;
+            max-width:650px;
+            line-height:1.6;
+            font-size:18px;
+            color:#090909;
+            padding:0 10px
+        }
+        h1,h2,h3{line-height:1.2}
+</style>
+</head>
+<body>
+
+<h2>How TinyVec went from "it has a niche" to "it's often faster than SmallVec"</h2>
 
 <p>
 About 2 weeks ago, Lokathor tweeted this:
-"Reminder that tinyvec is a 100% safe crate and does not have *any* CVEs filed against it, and certainly not 5 of them"
-This caught my attention; the crate in question is smallvec which shows up in the dependency graph of nearly every large Rust project.
+"Reminder that TinyVec is a 100% safe crate and does not have *any* CVEs filed against it, and certainly not 5 of them"
+This caught my attention; the crate in question is SmallVec which shows up in the dependency graph of nearly every large Rust project.
 </p>
 
 <p>
-smallvec and tinyvec are small-size-optimized versions of the Rust standard library's Vec.
-Smallvec takes a sort of realist approach; it uses unsafe code ostensibly for speed.
+SmallVec and TinyVec are small-size-optimized versions of the Rust standard library's Vec.
+SmallVec takes a sort of realist approach; it uses unsafe code ostensibly for speed.
 This goes predictably: Rust exists because unsafe programming is very hard to get right but sometimes has to be done, but the consequences of getting it wrong can be quite grave indeed (5 CVEs, likely more in the future).
-By contrast, tinyvec is a reaction to this and globally bans unsafe code.
-Though it is still subject to the unsafe code in the Rust compiler and standard library and thus it is not bulletproof, the unsafe code it calls out to is very well-tested and also used by smallvec.
+By contrast, TinyVec is a reaction to this and globally bans unsafe code.
+Though it is still subject to the unsafe code in the Rust compiler and standard library and thus it is not bulletproof, the unsafe code it calls out to is very well-tested and also used by SmallVec.
 So from a safety (and thus correctness) perspective it is a big step up.
 </p>
 
 <p>
-The traditional logic is that smallvec will be faster, perhaps much faster than tinyvec.
-So, curious to know the answer I went to the tinyvec repo.
+The traditional logic is that SmallVec will be faster, perhaps much faster than TinyVec.
+So, curious to know the answer I went to the TinyVec repo.
 The README said nothing of performance or benchmarks, but the oldest open issue was a request for benchmarking.
 I have some experience and strong opinions in this area, so I dove in.
-Matt Brubeck had kindly created a branch with tinyvec added to smallvec's benchmark suite intended to compare Vec and SmallVec.
+Matt Brubeck had kindly created a branch with TinyVec added to SmallVec's benchmark suite intended to compare Vec and SmallVec.
 Soveu had kindly contributed a few optimizations based on the benchmarks, but Lokathor commented this:
 "Still, it's very pleasant to see that there is a performance niche for TinyVec as well as simply a safety based case."
 </p>
@@ -35,4 +56,7 @@ And most importantly, I think the ambient experience with other technologies has
 I think in many cases we can trade off almost nothing in performance to gain a massive improvement in safety, and often people do not reach for this state because they do not think it possible.
 So I set about to prove this: My goal was to create a benchmark suite to measure how much slower TinyVec was than SmallVec, then try to drive that gap down as small as I could.
 I exceeded my most optimistic expectations.
+TinyVec is now substantially faster than SmallVec.
 </p>
+
+</body>
