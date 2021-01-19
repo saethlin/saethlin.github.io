@@ -1,0 +1,38 @@
+<h2>How tinyvec went from "it has a niche" to "it's often faster than smallvec"</h2>
+
+<p>
+About 2 weeks ago, Lokathor tweeted this:
+"Reminder that tinyvec is a 100% safe crate and does not have *any* CVEs filed against it, and certainly not 5 of them"
+This caught my attention; the crate in question is smallvec which shows up in the dependency graph of nearly every large Rust project.
+</p>
+
+<p>
+smallvec and tinyvec are small-size-optimized versions of the Rust standard library's Vec.
+Smallvec takes a sort of realist approach; it uses unsafe code ostensibly for speed.
+This goes predictably: Rust exists because unsafe programming is very hard to get right but sometimes has to be done, but the consequences of getting it wrong can be quite grave indeed (5 CVEs, likely more in the future).
+By contrast, tinyvec is a reaction to this and globally bans unsafe code.
+Though it is still subject to the unsafe code in the Rust compiler and standard library and thus it is not bulletproof, the unsafe code it calls out to is very well-tested and also used by smallvec.
+So from a safety (and thus correctness) perspective it is a big step up.
+</p>
+
+<p>
+The traditional logic is that smallvec will be faster, perhaps much faster than tinyvec.
+So, curious to know the answer I went to the tinyvec repo.
+The README said nothing of performance or benchmarks, but the oldest open issue was a request for benchmarking.
+I have some experience and strong opinions in this area, so I dove in.
+Matt Brubeck had kindly created a branch with tinyvec added to smallvec's benchmark suite intended to compare Vec and SmallVec.
+Soveu had kindly contributed a few optimizations based on the benchmarks, but Lokathor commented this:
+"Still, it's very pleasant to see that there is a performance niche for TinyVec as well as simply a safety based case."
+</p>
+
+<p>
+I'm usually a pretty calm person, but some things really irritate me, and this comment is one.
+Not that I harbor any dislike for the participants in this issue, on the contrary the conversation in this issue is open source at its finest.
+What I cannot stand is this rapid, unquestioning acceptance that there must be a widespread runtime performance tradeoff.
+In some ways, the Rust language is still very young and this is one of those.
+We as a community do not have a good intuition or frankly much experience navigating this safety vs performance space with the tools available in Rust.
+And most importantly, I think the ambient experience with other technologies has set the tolerance level too high.
+I think in many cases we can trade off almost nothing in performance to gain a massive improvement in safety, and often people do not reach for this state because they do not think it possible.
+So I set about to prove this: My goal was to create a benchmark suite to measure how much slower TinyVec was than SmallVec, then try to drive that gap down as small as I could.
+I exceeded my most optimistic expectations.
+</p>
